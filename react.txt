@@ -1,0 +1,297 @@
+___________________________________________________________________________________
+
+20/05
+___________________________________________________________________________________
+
+REACT
+-----
+
+- React is a open source web application
+- Developed and maintained by Meta
+- The language used in JSX
+- Default localhost:3000
+
+Features:
+- Used for creating UI
+- Its a Library
+- Its a single page applications which conencts with index.html (only this page gets loaded)
+- all other pages should have direct or indirect connection with the index.html
+- Declarative Application 
+  (does not access real DOM)
+
+-Virtual DOM
+    Its a copy of real DOM
+    Created by REACT
+    Diffing
+    -------
+        - the process of comparing the virtual DOM with the real DOM
+
+    Recounciliation
+    --------------
+        - process of updating the real dom after comparing it with the virtual DOM
+
+
+Pure function: the data that comes as the arguments of the function should only come in the output.
+-------------
+- output should only depend upon arguments
+function function_name(){
+    js code
+
+ 
+    return(){  this is the output of the function gets displayed on browser
+        jsx display
+    }
+}
+
+
+Transpiling: 
+------------
+    - Conversion of jsx into browser understanding language
+    - the package used is (babel)
+
+Data Sharing:
+-------------
+    - uni-directional : Parent to Child
+    - props : pre-defined object used for data sharing between Parent and Child
+
+
+Creating a React Application:
+    -npx - Node Package Executer
+    -npm - Node Package Manager
+
+    - if error npm i -g npm (to make it global)
+
+    - npx create-react-app demo
+    -cd demo (to into the project directory)
+    -npm start (start the app)
+
+Files Explaination:
+
+ 1,README.md - Summarised project description
+ 2,package.json - npm configurations
+        Dependencies include the Libraries required for the project(installed)
+        npm start - "react-scripts start" command inside the scripts object
+
+ 3,package-lock.json - it holds the library versions
+ 4,node_modules folder : entire copy of the installed Libraries
+ 5,.gitignore - ignore the contents to be pushed to github
+ 6,public folder : Files that can be accessed throughout the application
+        -index.html is the only file that run in the browser
+
+___________________________________________________________________________________
+
+21/05
+___________________________________________________________________________________
+
+WebVitals() in index.js - used for checking the performance
+
+Component:
+---------
+- Component is the basic unit of UI
+- Component names should start with Capital Letter
+- with extension as .js or .jsx
+- to place a component inside another file - use the component name tag
+(Important)
+- export the component to use in other Files
+- import the component in order to use it in the File
+
+- Data to be rendered should be inside a single DIV TAG (IMPORTANT) or <>  </> - Empty fragment.
+
+Style-css
+---------
+- external
+    -file with extension as css
+    -import on the files where it is required
+
+- inline
+    -is given as objects
+    -style = {{property1:value,property2:value}}
+
+    -can also be done by creating the object under the function app and using that name inside the style attribute
+- module.css
+------------
+    -must create in src folder
+    -with extension as ".module.css"
+    -accessible throughout the application
+    -inorder to use this module in another file - we need to import the module
+    - multiple styles are given by  className={[mystyle.reactStyle,mystyle.style2].join(' ')}
+
+-A declared variable under JS Codes can be used using {}
+
+___________________________________________________________________________________
+
+22/05
+___________________________________________________________________________________
+
+Components
+----------
+Components are of two types:
+1, Functional Component (rfce) - React Functional Component Export / Stateless Component
+    -functional - basic structure (Random.jsx)
+2, Class Component (rcc) - React Class Component/ Statefull Component
+    -class - basic structure (Example.jsx)
+
+___________________________________________________________________________________
+
+23/05
+___________________________________________________________________________________
+
+dataSharing: (IMP)
+-----------
+- using props - predefined object
+- key:value - enclosed in {}
+- data sharing between parent and child component (direction - parent -> child)
+
+
+Functional Component Data Sharing: Argument of the Function
+----------------------------------
+In App.js
+we shared it as -> Example sub={variableName}
+
+In Example.jsx
+Put the function arg as props
+Access data as props.sub
+
+Class Component Data Sharing: Constructor(){super(props)} 
+------------------------------
+In App.js
+we shared it as -> Random uname={variableName}
+
+In Random.jsx
+Create a Constructor(props){super(props)}
+
+
+Object Destructuring: (IMP)
+---------------------
+Instead of using props and getting all the data, you can use the key alone to get the particular data.
+In Example.jsx inside the Function give the arg in {age} and normally display it using {age}
+
+Event Handling:  (IMP)
+---------------
+1, Click Event:
+    1, Function with arguments
+        click = {()=>{functionName(arg)}} //shld be done as call back function
+    2, Function without arguments   
+        click = {functionName}
+
+        onChange = {(e)=>functionname(e)} -> for input types
+
+Conditional Rendering:
+----------------------
+1, Ternery Operation - condition?true:false
+    Used for checking React name in prining the condition in Example.jsx
+2, Truthy Operator  - condition && true
+
+___________________________________________________________________________________
+
+24/05
+___________________________________________________________________________________
+
+State: (imp)
+------------
+    -By default works only in "class component"
+    -Object used to store property(values) of a REACT "class component".
+    -if the value in the state changes the whole components gets re-rendered
+
+    -where as variables store local data that does not effect the component re-rendered.
+
+    state = {property:value} inside Constructor for accessing {state.property}
+
+    -setState() - function to change value of a State
+
+(Important)
+Life cycle of React Class Component
+------------------------------------
+Three Phases:
+    1, Mounting Phase - creation of component
+        a, constructor() - to initialize the state
+        b, getDerivedStateFromProps() - used to modify state values using props
+                            -it returns an object to update the state or null to indicate no state updation
+        c, render() - Returns JSX that represents the component output
+        d, componentDidMount() - last method - network calls(API calls)/side effects
+
+    2, Updating Phase - updationg of the component
+        a, getDerivedStateFromProps()
+        b, shouldComponentUpdate()- method is invoked before rendering when a new props or state are the receipts. 
+            It returns true if the component should update else return false.
+        c, render()
+        d, getSnapShotBeforeUpdate()- method is called right before the changes from the virtual dom are to be reflected in the actual dom.
+        e, componentDidUpdate() - DOM Update
+
+    3, Unmounting Phase - Deletion of the component
+        a, componentWillUpdate()- cancels network calls and clean the DOM
+
+    4, Error Handling Phase
+        a, getDerivedStateFromError() - called when there is an error during the render
+        b, componentDidCatch() - called after an error being thrown
+
+
+HOOKS(imp)
+----------
+    -Rules to use Hooks:
+    --------------------
+
+        -it need to be imported in the functional component at the top of the file.
+        -can call hook at the top section of the function
+        -hooks cannot be called conditionally
+
+    -Functions:
+    - two types of HOOKS
+        1, Predefined HOOKS
+            a, useState() - to provide state to functional component
+                            - return state and function to change the state
+
+                            syntax
+                            ------
+                            const [state,functionname] = useState(initial value of state)
+        2, Custom HOOKS
+    
+
+___________________________________________________________________________________
+
+28/05
+___________________________________________________________________________________
+
+Vite Platform:
+----------------
+npm create vite@latest project_name
+
+In Package.json:
+Add "--open" to vite in dev:vite - so browser opens automatically
+
+Material UI (mui.com) and install for UI Components
+
+To get a value from Input Box: (IMP)
+onChange = (e)=>validate(e)
+
+___________________________________________________________________________________
+
+29/05
+___________________________________________________________________________________
+
+App.jsx important of SimpleInterest (VERY IMPORTANT)
+
+Regular Expression:
+-----------------
+Used to check the pattern of a given string
+
+Rules for Creating Regular Expressions:
+-----------------------------------
+1,should starts and ends with forward slash
+2, expression should starts with ^
+3, expression should ends with $
+4, constions are placed inside a square bracket
+
+eg. /^[0-9]*$/   -> * is added for the combination of 0-9
+
+match() - compare regular expression with string
+if match returns null then string does not match with regular expression
+!! to convert to boolean type
+
+
+___________________________________________________________________________________
+
+30/05
+___________________________________________________________________________________
+
+Media Player:
