@@ -1,0 +1,400 @@
+INTRODUCTION
+------------
+
+Web Application - Application that can be viewed using a browser
+
+basically two components : 
+
+ 1) frontend - which the user can view
+                Technologies - HTML CSS BOOTSRTAP JAVASCRIPT
+                                ANGULAR and REACT
+ 2) Backend -server - to resolve the request - node.js - express.js
+             DataBase - to store the data   - mongodb
+----------------------------------------------------------------------------
+
+API - Application programming interface - to connect with the frontend and the server available in the internet
+
+http - Hypertext transfer protocol - sets of rules to transfer data over the Web
+        1) get - to retrieve data
+        2) post - to add data
+        3) put - to update data
+        4) delete - to remove data
+
+JSON - the formate of sharing data through internet. javascript object notation
+-------------------------------------------------------------------------------------------------------------
+
+
+MODULE - I
+-----------
+
+HTML - Hypertext markup language - create content
+--------------------------------------------------- 
+   markup language             programming language
+
+   - browser                    -compiler
+   -web designing               -logical operation
+   eg: html, xml                   c, c++, java, python
+   -tag based language
+
+   ----------------------------------------------------------------------------
+   <tagname>
+   ------------------------
+   type of tag
+   ----------------
+   1) opening tag  <tagname>
+   2) closing tag </tagname>
+   eg html <html></html>
+   3) self closing tags <tagname/> eg : <input/> - Also refered to as void element
+
+   Void elements are those that do not have any content or closing tag, and they are self-contained.
+   eg: <img />, <br> <hr> <input/> etc....
+  ---------------------------------------
+
+
+
+IDE - integrated development environment - code editor
+--------------------------------------------------------
+
+BASIC STRUCTURE
+----------------
+
+<HTML>
+<head>
+<title></title>
+</head>
+<body>
+   content
+</body>
+</HTML>
+
+------------------------------------------------------
+sematic tags
+------------
+- to optimise the web page
+1) <header>
+2) aside
+3) main
+4) footer
+-------------------------------------------------------
+
+html tags
+------------
+1) <h> - creating heading
+2) <p> - creating paragraph
+3) <a> - creating navigation links
+formatting tags
+---------------
+4) <b> - Bold text
+5) <strong> - Important text
+6) <i> - Italic text
+7) <em> - Emphasized text
+8) <mark> - Marked text
+9) <small> - Smaller text
+10) <del> - Deleted text
+11) <ins> - Inserted text
+12) <sub> - Subscript text
+13) <sup> - Superscript text
+-------------------------------
+14) <img> - to place images
+15) <iframes> - embedding videos and maps - used for nesting of websites.
+16) <br> - break and start in the next line
+17) <hr> - to create horizontal line
+18) <ul> <li> - unordered list
+19) <ol> <li> - ordered list
+20) <table> - 
+        <thead></thead>
+        <tbody></tbody>
+         <tr> - to create row
+         <th> - to create column with heading
+         <td> - to create column with data
+   </table>
+
+ 21) <form>
+            <label> - to create text
+            <input> - to create input box 
+            <textarea> - to create larger input box
+            <select> - to create dropdown input box
+               <option> - to create options in dropdown
+      </form>  
+22) <span> - inline style
+23) <div> -divison
+24) <button>
+---------------------------------------------------------
+Attribute: gives more information about a tag
+----------
+name - for grouping
+id and for - for connecting the label and input
+min max
+type of Inputs
+--------------
+1) text
+2) password
+3) email
+4) date
+5) radio
+6) file
+7) checkbox
+8) number
+---------------------------------------------------------
+
+html5 update 
+------------
+1) <video> <source> - for placing video
+2) <audio> <source> - for placing audio
+3) <figure> and <figurecaption> - for image with caption
+4) placeholder attribute
+5) type -email
+6) nav tag , progress tag , article tag section tag etc....
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+CSS - cascading stylesheet
+--------------------------------------------------------
+to add style to contents
+
+different way of using CSS
+------------------------------
+1) inline css - syntax -> style="property:value;"
+2) Internal css - syntax
+     <style>
+     selector{
+        property:value;
+     }
+     </style>
+3) External css :
+ -file create 
+      selector{
+            property:value;
+         }
+ -css file should be linked with the html file -> <link rel="stylesheet" href="url">
+
+best way is css is External - - reduces complexity and increases the readability
+                              - reduces the loading time
+                              - can be re-used
+                              - order external>internal>inline
+
+ - priority order
+         inline>internal>external
+---------------------------------------------------------------------
+CSS Selectors
+-------------
+1) tagname Selector
+2) id selector - unique style(#)
+3) class selector - group styling(.)
+4) Universal selector - effect the entire document(*)
+5) descendent selector - parent child {property:value}
+
+-------------------------------
+css box model
+--------------
+- the box that wrap around each html element
+
+- it contains
+ 1) border -its a invisible line drawn around the content or element - viewed by giving styles
+ 2) margin -the gap between the border and the outer space
+ 3) padding - space between the content and the border
+
+------------------------------------------------------------
+
+Pseudo class
+------------
+To define a special state of a element
+ eg: style on mouse hover
+     style visited and unvisited link differently
+     style elements when it gets focus etc....
+
+-------------------------------------------------------------
+
+css grid
+--------
+-Gives a layout system with rows and columns
+-This can eliminate the use of float and positioning
+- display: grid - create grid to a section
+  columns - grid-template-column
+  rows - grid-template-row
+  gap - column-gap
+      - row-gap
+      -gap
+
+-------------------------------------------------------
+
+Linear Gradient - for provding combination of colors
+---------------
+
+background-image: linear-gradient(direction , color1......colorn)
+
+-----------------------------------------------------
+
+@keyframes - used to give animation
+--------------------------
+ syntax
+---
+animation: name duration;
+
+@keyframes animation_name
+{
+    keyframe_selector{
+     css-styles;
+  }
+}
+--------------------------------------------------------
+position properties -The position property specifies the type of positioning method used for an element
+    - fixed - The element is positioned relative to the browser window
+    - relative -	The element is positioned relative to its normal position
+    - absolute -The element is positioned relative to its first positioned (not static) ancestor element
+
+---------------------------------------------------------
+transform properties -The transform property applies a 2D or 3D transformation to an element. 
+     - translate
+     - rotate
+     - scale
+--------------------------------------------------------
+z-index = specifies the stack order of an element
+        - workd only for positioned element
+        - element with higher value will be positioned at the top
+        - positive as well as negative
+
+---------------------------------------------------------
+
+css variables
+1) global variables - create inside root selector - accessed throughout the css file
+    syntax
+      :root{
+        --variable_name = value
+      }
+      use - var(--variable_name)
+2) local varaible
+    - created inside a selector - accessed inside on block level
+
+---------------------------------------------------------
+media query - to make the web page responsive 
+--------------
+- introduced in CSS3
+
+ syntax
+---------
+
+@media (expression){
+ css -code
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+Bootstrap
+---------
+- most popular HTML,CSS,JavaScript framework for developing responsive, mobile first websites
+- connected using CDN(Content delivery network) or by downloading the content.
+
+Grid class
+----------
+-Bootstrap's grid system allows up to 12 columns across the page.
+
+-If you do not want to use all 12 column individually, you can group the columns together to create wider columns.
+
+-The Bootstrap grid system has four classes:- to make it responsive with the device size.
+
+     -	xs (for phones - screens less than 768px wide)
+     -  sm (for tablets - screens equal to or greater than 768px wide)
+     -	md (for small laptops - screens equal to or greater than 992px wide)
+     -	lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+
+- Some Bootstrap grid system rules:
+
+    -	Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding
+    -	Use rows to create horizontal groups of columns
+    -	Content should be placed within columns, and only columns may be immediate children of rows
+    -	Predefined classes like .row and .col-sm-4 are available for quickly making grid layouts
+    -	Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows
+    -	Grid columns are created by specifying the number of 12 available columns you wish to span. For example, three equal columns would use three .col-sm-4
+    -	Column widths are in percentage, so they are always fluid and sized relative to their parent element
+
+
+ - basic structure
+--------------------
+  <div class="container">
+  <div class="row">
+    <div class="col-*-*"></div>
+    <div class="col-*-*"></div>
+  </div>
+  <div class="row">
+    <div class="col-*-*"></div>
+    <div class="col-*-*"></div>
+    <div class="col-*-*"></div>
+  </div>
+  <div class="row">
+    ...
+  </div>
+</div>
+So, to create the layout you want, create a container (<div class="container">). Next, create a row (<div class="row">). Then, add the desired number of columns (tags with appropriate .col-*-* classes). Note that numbers in .col-*-* should always add up to 12 for each row.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Git and GitHub
+----------------
+git - Tool to do operations in github
+
+github - it is a platform and cloud-based service for software development that allow developers to store and manage their code.
+
+Advantage
+--------------
+1) store code
+2) share code 
+3) host minor projects
+4) also called as version control system . Since it holds all the version of the code .
+
+
+github - storage space --- remote repository - acessible
+git - storage space ---- local repository -  not universally accessible
+computer storage space ---- local storage
+
+git operation
+--------------------------
+1) push : local - remote repo -> uploading , updating
+2) clone : remote  repo - local repo -> downloading
+3) pull :  remote repo - local repo -> downloading
+
+push operation
+------------------
+
+1) git init - to initialize git
+2) git status - to check the status of files in the folder
+3) git add file_name or git add . - to add files to the git
+4) git commit -m"message" - to save the files in the local repository
+5) create remote repository in the github
+6) link local repo and remote repo
+7) git remote -v - to check the local repository is connected with the remote repo
+8) git push origin master - to add files  to remote repo
+       here origin is the variale name it may change
+9) git remote remove origin - to remote the github respository
+
+
+clone operation
+---------------
+git clone url
+
+pull operation
+--------------
+ git pull url
+
