@@ -1,0 +1,68 @@
+1. Default Cursor
+cursor: default;
+This is the default arrow cursor and appears when no other cursor type is specified.
+2. Pointer Cursor
+cursor: pointer;
+Typically used for clickable elements like links and buttons. The cursor changes to a hand icon, indicating an interactive element.
+3. Text Cursor (I-Beam)
+cursor: text;
+Used for text input areas or selectable text. The cursor changes to an I-beam, indicating that text can be selected or typed.
+4. Move Cursor
+cursor: move;
+Indicates that the element can be moved. Often used for draggable elements.
+5. Resize Cursors
+Indicate resizing directions. These are often used for resizable elements.
+
+Horizontal Resize: cursor: ew-resize; (left and right)
+
+Vertical Resize: cursor: ns-resize; (up and down)
+
+Diagonal Resize:
+
+cursor: nwse-resize; (top-left to bottom-right)
+cursor: nesw-resize; (top-right to bottom-left)
+6. Crosshair Cursor
+cursor: crosshair;
+Shows a crosshair, often used in applications or games that require precision pointing.
+7. Not-Allowed Cursor
+cursor: not-allowed;
+Displays a "🚫" icon, often used for disabled or restricted elements to indicate they can’t be interacted with.
+8. Help Cursor
+cursor: help;
+Displays a question mark or a tooltip, indicating more information is available. Often used for info icons.
+9. Wait Cursor
+cursor: wait;
+Displays a loading or hourglass icon, suggesting the user should wait for an action to complete.
+10. Progress Cursor
+cursor: progress;
+Shows a loading indicator but also allows interactions with the page, implying that loading is ongoing.
+11. Grab and Grabbing Cursors
+cursor: grab; – Indicates that an element can be "picked up" or dragged.
+cursor: grabbing; – Indicates the element is currently being dragged.
+12. Custom Cursor
+cursor: url('custom-cursor.png'), auto;
+Allows for custom images as cursors by specifying a URL. The fallback value (e.g., auto) is used if the image cannot be loaded.
+
+
+
+
+==================================
+.button {
+  cursor: pointer;
+}
+
+.text-area {
+  cursor: text;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.resize-handle {
+  cursor: nwse-resize;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
